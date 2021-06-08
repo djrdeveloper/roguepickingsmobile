@@ -1,17 +1,14 @@
 HTML {
 	font-size: 16px;
+	margin: 0px;
 }
-
-
 body {
-	max-width: 1200px;
-    width: 90%;
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	display: flex;
+	flex-direction: column;
     justify-content: center;
     align-items: center;
-	flex-flow: row wrap; 
 }
 
 .container{
@@ -21,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
 	flex-flow: row wrap; 
-	margin: 0 auto;
+	margin: 0;
 }
 
 h1,
@@ -30,6 +27,7 @@ h3 {
 	color: black;
 	text-transform: uppercase;
 	font-weight: 700;
+	margin: 0;
 }
 h1 {
 	font-size: 1.875em;
@@ -56,7 +54,7 @@ header {
     align-items: center;
 	flex-flow: row wrap; 
 	border-bottom: 3px solid #77a466;
-	margin: 0 auto;
+	margin: 0px;
 }
 
 header h1 {
@@ -73,11 +71,12 @@ header nav {
 header nav ul {
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 0.875;
+	font-size: 0.875em;
 	padding: 0 10px;
 	display: inline;
 }
@@ -94,8 +93,7 @@ header nav ul li a{
 	display: flex;
     justify-content: center;
     align-items: center;
-	flex-flow: row wrap; 
-	margin: 0 auto;
+	flex-flow: column wrap; 
 }
 
 .main-image {
@@ -103,6 +101,7 @@ header nav ul li a{
 }
 .main-image img {
 	width: 100%;
+	margin:0px;
 	border-bottom: 3px solid #77a466;
 }
 
@@ -110,7 +109,7 @@ header nav ul li a{
 	height: auto;
 }
 .main-title h2 {
-	text-align: left;
+	text-align: center;
 	padding: 5px 0;
 	color: #77a466;
 }
@@ -123,7 +122,7 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
+	width: 100%;
 	height: auto;
 	border-top: 1px solid #eee;
 }
@@ -171,7 +170,7 @@ footer {
     align-items: center;
 	flex-flow: row wrap; 
 	border-top: 3px solid #eee;
-	margin: 0 auto;
+	margin: 0 ;
 	text-align: center;
 }
 footer span {
@@ -179,4 +178,44 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+
+@media all and (min-width:768px) {
+    /* Tablet styles here */
+ .bottom-section { 
+	 flex-flow: column wrap;
+	 border-top: 1px solid black;
+ }
+ .section-one,.section-two,.section-three {
+	width: 100%;
+	text-align: center;
+ }
+ .section-two {
+	 border-left: 1px solid black;
+	 border-right: 1px solid black;
+	 border-top: none;
+	 border-bottom: none;
+ }
+ .section-three {
+	 border: none;
+ }
+}
+ 
+@media all and (min-width:1200px) {
+    /* Desktop styles here */
+	header {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-flow: row; 
+	}
+	
+	header h1 {
+		width: 50% ;
+		border-bottom: none;
+	  }
+ 
+	.section-two {
+		border: none;
+	}
 }
